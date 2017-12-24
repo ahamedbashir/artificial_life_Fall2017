@@ -9,10 +9,14 @@ public class Herbivore extends Animal {
         super(age, energy);
     }
 
+    public Herbivore( int age, int energy, int visited[][]){
+        super(age, energy, visited);
+    }
     @Override
-    public void updateLife() {
+    public boolean isAlive() {
         if ( super.getAge() > MAX_LIFE || super.getEnergy() < 0)
-            super.setAlive(false);
+            return false;
+        else return true;
     }
 
     @Override

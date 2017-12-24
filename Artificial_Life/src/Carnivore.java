@@ -5,14 +5,19 @@ public class Carnivore extends Animal {
         super();
     }
 
-    public Carnivore(int age, int energy) {
+    public Carnivore(int age, int energy)
+    {
         super(age, energy);
     }
-
+    public Carnivore ( int age, int energy, int visited[][]){
+        super(age, energy, visited);
+    }
     @Override
-    public void updateLife() {
+    public boolean isAlive() {
         if ( super.getAge() > MaxLife|| super.getEnergy() < 0)
-            super.setAlive(false);
+            return false;
+        else
+            return true;
     }
     @Override
     public String toString() {

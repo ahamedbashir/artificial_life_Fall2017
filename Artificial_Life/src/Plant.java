@@ -10,10 +10,11 @@ public class Plant extends Organisms {
     }
 
     @Override
-    public void updateLife() {
-        if ( getAge() > MAX_LIFE_YEAR ) {
-         super.setAlive(false);
-        }
+    public boolean isAlive() {
+        if ( getAge() > MAX_LIFE_YEAR )
+            return false;
+        else
+            return true;
     }
 
     @Override
